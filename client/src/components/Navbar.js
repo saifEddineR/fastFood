@@ -176,7 +176,7 @@ const Navbar = () => {
                 <MenuItem onClick={handleCloseUserMenu}>
                   {userInfo.role === 'admin' && (
                     <Link
-                      to='/dashboard'
+                      to='/free'
                       style={{ textDecoration: 'none', color: 'black' }}
                       textAlign='center'
                     >

@@ -12,11 +12,17 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRouteAdmin from './components/ProtectedRoute';
 import ProtectedRouteUser from './components/ProtectedRouteUser';
 import MainLayout from './layout/MainLayout';
-import { useSelector } from 'react-redux';
 import { ThemeProvider } from '@mui/material/styles';
 import themes from './themes';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserData } from './slices/userSlice';
+import { useEffect } from 'react';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUserData());
+  }, [dispatch]);
   const { pathname } = useLocation();
   const customization = useSelector((state) => state.customization);
   return (
@@ -34,10 +40,9 @@ function App() {
           <Route element={<ProtectedRouteUser />}>
             <Route path='/profile' element={<Profile />} />
           </Route>
-          <Route path='/dashboard/default' element={<Navigate to='/free' />} />
           <Route element={<ProtectedRouteAdmin />}>
             <Route path='/free' element={<MainLayout />}>
-              {/* <Route path='' element={<Dashboard />} /> */}
+              <Route path='' element={<Dashboard />} />
               <Route path='dashboard/default' element={<Dashboard />} />
             </Route>
           </Route>

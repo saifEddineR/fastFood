@@ -3,21 +3,15 @@ import { Card, CardContent, Grid } from '@mui/material';
 import Skeleton from '@mui/material/Skeleton';
 
 // project imports
-import { gridSpacing } from '../../store/constant';
 
 // ==============================|| SKELETON TOTAL GROWTH BAR CHART ||============================== //
 
 const TotalGrowthBarChart = () => (
   <Card>
     <CardContent>
-      <Grid container spacing={gridSpacing}>
+      <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Grid
-            container
-            alignItems='center'
-            justifyContent='space-between'
-            spacing={gridSpacing}
-          >
+          <Grid container alignItems='center' justifyContent='space-between' spacing={3}>
             <Grid item xs zeroMinWidth>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
