@@ -9,8 +9,8 @@ pipeline{
         stage('build'){
             steps{
                 cd client
-                npm install
-                npm run build
+                sh'npm install'
+                sh'npm run build'
             }
         }
         stage('deliver'){
