@@ -8,7 +8,8 @@ pipeline{
         }
         stage('build'){
             steps{
-                echo 'hello build'
+                npm install
+                npm run build
             }
         }
         stage('deliver'){
