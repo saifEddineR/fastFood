@@ -8,6 +8,7 @@ pipeline{
         }
         stage('build'){
             steps{
+                cd client
                 npm install
                 npm run build
             }
